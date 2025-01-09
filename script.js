@@ -1,7 +1,6 @@
 const fs = require('fs');
-const { PDFDocument, rgb } = require('pdf-lib');
+const { PDFDocument } = require('pdf-lib');
 const { createCanvas } = require('canvas');
-const fontkit = require('fontkit');
 
 async function textToImage(guestName) {
   const canvas = createCanvas(500, 100);
@@ -25,7 +24,6 @@ async function addImageToPDF(imageBuffer, guestName) {
 
     const pages = pdfDoc.getPages();
     const page = pages[1];
-    const { width, height } = page.getSize();
 
     const imageWidth = 200;
     const imageHeight = 50;
